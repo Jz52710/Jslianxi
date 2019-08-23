@@ -1,0 +1,13 @@
+.box{
+    width: 1000px;
+    height: 1000px;
+    background: pink;
+    display: flex;
+    justify-content: space-between;
+}
+.boxs{
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin: 20px;
+}

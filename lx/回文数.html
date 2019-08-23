@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回文数</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="sr">
+        <input type="button" value="提交" onclick="hws()">
+    </form>
+</body>
+<script>
+    function hws(){
+        let a = document.getElementById("sr").value;
+        let flag = true;
+        for (let i = 0, len = a.length, n = (len - 1) / 2; i < n; i++) {
+            if (a.charAt(i) != a.charAt(len - 1 - i)) {
+                flag = false;
+                break;
+            }
+        }
+        console.log(a, flag ? '是回文数' : '不是回文数')
+        return flag;
+    }
+</script>
+</html>

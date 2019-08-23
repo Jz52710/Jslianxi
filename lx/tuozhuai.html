@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+#box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 10px;
+      left: 10px;
+      background: red;
+}
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+let box = document.querySelector('.box');
+    box.onmousedown = function (e) {
+        let disx = e.pageX - box.offsetLeft;
+        let disy = e.pageY - box.offsetTop;
+        document.onmousemove = function (e) {
+            box.style.left = e.pageX - disx + 'px';
+            box.style.top = e.pageY - disy + 'px';
+    }
+    //释放鼠标按钮，将事件清空，否则始终会跟着鼠标移动
+    box.onmouseup = function () {
+        document.onmousemove = document.onmouseup = null;
+    }
+}
+</script>
+</html>

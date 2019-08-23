@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则作业</title>
+</head>
+<body>
+<div class="box">
+    <a href=""></a>
+</div>
+</body>
+<script>
+    // 初级练习
+    // 1、求非负整数 :
+    // let arr = ['1','-1','1.1','-1.5','7']
+    // let re = /^\d$/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 2、匹配正整数：
+    // let str = -1
+    // let re = /^\d$/
+    // console.log(re.test(str))
+    // 3、非正整数：
+    // let arr = ['1','-1','1.1','-1.5','7','-7','0']
+    // let re = /^^[^\d$]\d$|0+/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 4、负整数：
+    // let arr = ['1','-1','1.1','-1.5','7','-7','0']
+    // let re = /^^[^\d$]\d$/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 5、整数 ：
+    // let arr = ['1','-1','1.9','-1.5','7','-7','0']
+    // let re = /^^\d$|0|^[^\d$]\d$/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    //  6、非负浮点数 ：（正）
+    // let arr = ['0','0.0','0.23','1','1.0','1.3','123.456','-7.7']
+    // let re = /^\d+\.[1-9]+$/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 7、正浮点数 ：（0和正）
+    // let arr = ['0','0.23','1','1.3','123.456','-7.7','-77.765']
+    // let re = /^0$|^\d+\.[1-9]+$/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 8、非正浮点数 ：(0和负）
+    // let arr = ['0','0.23','1','1.3','123.456','-7.7','-77.765']
+    // let re = /^0$|-\d+\.[1-9]+/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 9、负浮点数：
+    // let arr = ['0','0.23','1','1.3','123.456','-7.7','-77.765']
+    // let re = /-\d+\.[1-9]+/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 10、浮点数：
+    // let arr = ['0','0.23','1','1.3','123.456','-7.7','-77.765']
+    // let re = /^0$|\d+\.[1-9]+/
+    // arr.forEach((item)=>{
+    //     console.log(re.exec(item))
+    // })
+    // 11、由数字、26个英文字母组成的字符串：
+    // let str = `jz710`
+    // let re = /^[A-Za-z0-9]+$/
+    // console.log(re.test(str))
+    // 中级练习
+    // 1、长度为8-10的用户密码（以字母开头、数字、下划线）
+    // let arr = ['12345678','jz527101','123$']
+    // let re = /^[A-Za-z]\w{7,10}$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    // 2、验证输入只能是汉字 ：
+    // let arr = ['贾争','abc1','123','$4']
+    // let re = /^[\u4e00-\u9fa5]+$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    // 3、电子邮箱验证：
+    // let arr = ['www.864278318@qq.net','www.jz344@163.com','123@1.com.cn']
+    // let re = /^\w+\.\w+@\w+\.\w+(\.\w+)?$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    //  4、URL地址验证
+    // let arr = ['https://www.baidu.com/sdfa?nahorns=1','https://lol.qq.com/main.shtml']
+    // let re = /^(https:\/\/|http:\/\/)([\w,.]+)\/([\w,.]+)\??([\w,=,\u4e00-\u9fa5,&]+)?$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    // 5、电话号码的验证：
+    // let arr = ['13903585588','15535151600','18634564567','18799876521','87612345678']
+    // let re = /^(139|155|186|187)\d{8}$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    // 6、简单的身份证号验证：
+    // let arr = ['14112217780705098X','123344188705048873','123355122378900','12345678']
+    // let re = /(\d{18})|(\d{17}\w)|(\d{15})$/
+    // arr.forEach((item)=>{
+    //     console.log(re.test(item))
+    // })
+    // 高级练习
+    // 1、提取并捕获html标签内容
+    // let str = '<div class="box"><span></span><span></span><span></span><span></span></div>'
+    // let re = /<[\w,\s,=,",']+>(<[\w,\s,=,",',]+><[\w,\s,=,",',\/]+>)+<[\w,\s,=,",',\/]+>/
+    // console.log(re.exec(str))
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jQuery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // $.ajax({
+    //     url:"https:////api.map.baidu.com/api?v=2.0&ak=9XesN5q8ZA9TL5lgpUo9vtRlETjf6CXu",
+    //     type:"get",
+    //     dataType:"jsonp",
+    //     success:function (e) {
+    //         console.log(e)
+    //     }
+    // })
+     $(document).ready(function(){
+        var a;
+        $(".btn").click(function(){
+            $.ajax({
+                url:"https:////api.map.baidu.com/api?v=2.0&ak=9XesN5q8ZA9TL5lgpUo9vtRlETjf6CXu",
+                type:"post",    //请求方式
+                async:true,    //是否异步
+                dataType:"jsonp",    //跨域json请求一定是jsonp
+                jsonp: "callbackparam",    //跨域请求的参数名，默认是callback
+                // jsonpCallback:"successCallback",    //自定义跨域参数值，回调函数名也是一样，默认为jQuery自动生成的字符串
+                data:{
+                    "appKey":"d991216a4f7142fe8978b470cce7a486",
+                    "page":'1',
+                    "maxResult":'2'
+                },    //请求参数
+
+                beforeSend: function() {
+                    console.log("请求前的处理")
+                },
+                success: function(data) {
+                    console.log("成功处理请求",data)
+                },
+                complete: function() {
+                    console.log("请求完成")
+                },
+
+                error: function(err) {
+                    console.log(err)
+                }
+            });
+        })
+    })
+</script>
+</html>

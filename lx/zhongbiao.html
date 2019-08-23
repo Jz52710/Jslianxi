@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>钟表</title>
+</head>
+<body>
+<input type="datetime-local" class="datetime">
+<input type="button" value="倒计时" class="btn">
+<div class="box">
+    <span class="day">0</span>天
+    <span class="hour">0</span>时
+    <span class="min">0</span>分钟
+    <span class="sec">0</span>秒钟
+</div>
+
+</body>
+<script>
+    let datetime = document.querySelector(".datetime")
+    let btn = document.querySelector(".btn")
+    let day =document.querySelector(".day")
+    let hour = document.querySelector(".hour")
+    let min = document.querySelector(".min")
+    let sec = document.querySelector(".sec")
+    let future = ""
+    let flag = true
+    btn.onclick = function () {
+        future = new Date(datetime.value)
+        if(future && flag){
+            flag = false
+            datetime.setAttribute("readonly","readonly")
+            setInterval(up,1000)
+        }
+    }
+    function up() {
+        let now = new Date()
+        let offfect = Math.floor((future.getTime()-now.getTime())/1000)
+        let dayNum = Math.floor(offfect/(60*60*24))
+        day.innerText = dayNum
+        let hourNum = Math.floor(offfect%(60*60*24)/(60*60))
+        hour.innerText = hourNum
+        let minNum = Math.floor((offfect%(60*60*24))%(60*60)/60)
+        min.innerText = minNum
+        let secNum = Math.floor(offfect%(60*60*24)%(60*60)%60)
+        sec.innerText = secNum
+    }
+</script>
+</html>

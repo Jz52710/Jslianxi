@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+<body>
+    <div class="box">
+        <div class="son1">this is box</div>
+        <div class="son2">this is box</div>
+        <div class="son3">this is box</div>
+        <div class="son4">this is box</div>
+        <div class="son5">this is box</div>
+    </div>
+</body>
+<script>
+    // let str = "abcdefgh"
+    // let re = /abc/
+    // console.log(re.exec(str))
+//     let re = /^abc$/gim
+// let str1 = `
+// abc
+// ABC
+// abc
+// `
+// console.log(re.exec(str1))
+// console.log(re.exec(str1))
+// console.log(re.exec(str1))
+// let arr = [
+//     '842615663@qq.com',
+//     'wetjih@163.com',
+//     'we234tjih@163.cn',
+//     'we234tjih@qq.cn',
+//     'wqeotq345@yahoo.com.cn',
+//     '842615663@qq',
+//     '842615663qq.com',
+//     '@qq.com'
+// ]
+//     let re = /^\w+@(qq|163|yahoo)\.(com|cn)(\.cn)?$/
+//     arr.forEach((item)=>{
+//         console.log(re.exec(item))
+//     })
+let str = `<div class="box">
+<div class="son1">this is box</div>
+<div class="son2">this is box</div>
+<div class="son3">this is box</div>
+<div class="son4">this is box</div>
+<div class="son5">this is box</div>
+</div>
+`
+let re = /<[\w,",=,\s]+>\n<[\w,",=,\s]+>[\w,\s]+<[\w,",=,\s,\/]+>\n<[\w,",=,\s]+>[\w,\s]+<[\w,",=,\s,\/]+>\n(<[\w,",=,\s]+>([\w,\s]+)<[\w,",=,\s,\/]+>\n)<[\w,",=,\s]+>[\w,\s]+<[\w,",=,\s,\/]+>\n<[\w,",=,\s]+>[\w,\s]+<[\w,",=,\s,\/]+>\n<[\w,",=,\s,\/]+>/
+    console.log(re.exec(str))
+</script>
+</html>
